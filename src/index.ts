@@ -8,6 +8,7 @@ import {
   getThingsAlredyKnown,
   responseNotFound,
 } from "./server/controllers/thingsAlredyKnown/thingsAlredyKnownControllers.js";
+import thingsAlredyKnown from "./data/thingsIAlredyKnow.js";
 
 const port = process.env.PORT ?? 4000;
 
@@ -21,6 +22,17 @@ app.listen(port, () => {
 
 app.get("/things", getThingsAlredyKnown);
 
-app.get("/things/:id", getThing);
+app.get("/things/:idThing", getThing);
+
+app.delete("/things/:id", (req, res) => {
+  const { id } = req.params;
+  const thingPosition = thingsAlredyKnown.findIndex((thing) => thing.id === id);
+  if (thingPosition === -1) {
+    return res.status(404).json({ message: "No student found" });
+  }
+
+  thingsAlredyKnown.splice(thingPosition, 1);
+  res.status(200).json({ message: "Thing deleted" });
+});
 
 app.use(responseNotFound);

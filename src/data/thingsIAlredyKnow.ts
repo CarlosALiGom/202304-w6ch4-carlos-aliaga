@@ -11,7 +11,7 @@ const thingsAlredyKnown: ThingsAlredyKnownStructure[] = [
   },
   {
     id: "3",
-    name: "Molestar a compañeros y profesores",
+    name: "Molestar a compañer@s y profesor@s",
   },
 ];
 
