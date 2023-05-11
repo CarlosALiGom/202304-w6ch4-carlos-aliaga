@@ -1,3 +1,5 @@
-import { type ThingsAlredyKnownStructure } from "../types";
+import { type ThingsAlredyKnownStructure } from "../types.js";
 
-export const thingsAlredyKnown: ThingsAlredyKnownStructure[] = [];
+const thingsAlredyKnown: ThingsAlredyKnownStructure[] = [];
+
+export default thingsAlredyKnown;
