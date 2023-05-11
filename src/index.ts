@@ -4,6 +4,7 @@ import express from "express";
 import app from "./server/index.js";
 import morgan from "morgan";
 import {
+  getThing,
   getThingsAlredyKnown,
   responseNotFound,
 } from "./server/controllers/thingsAlredyKnown/thingsAlredyKnownControllers.js";
@@ -19,5 +20,7 @@ app.listen(port, () => {
 });
 
 app.get("/things", getThingsAlredyKnown);
+
+app.get("/things/:id", getThing);
 
 app.use(responseNotFound);
