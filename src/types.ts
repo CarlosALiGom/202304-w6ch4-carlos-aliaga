@@ -1,4 +1,4 @@
 export interface ThingsAlredyKnownStructure {
-  id: number;
+  id: string;
   name: string;
 }

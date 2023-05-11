@@ -7,6 +7,8 @@ import {
   getThingsAlredyKnown,
   responseNotFound,
 } from "./server/controllers/thingsAlredyKnown/thingsAlredyKnownControllers.js";
+import { type Request, type Response } from "express-serve-static-core";
+import thingsAlredyKnown from "./data/thingsIAlredyKnow.js";
 
 const port = process.env.PORT ?? 4000;
 
@@ -19,5 +21,12 @@ app.listen(port, () => {
 });
 
 app.get("/things", getThingsAlredyKnown);
+
+app.get("/things/:id", (req: Request, res: Response) => {
+  const { id } = req.params;
+  const selectedThing = thingsAlredyKnown.find((thing) => thing.id === id);
+
+  res.status(200).json({ selectedThing });
+});
 
 app.use(responseNotFound);
