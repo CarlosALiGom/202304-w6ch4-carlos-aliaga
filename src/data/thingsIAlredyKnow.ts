@@ -1,6 +1,6 @@
-import { type ThingsAlredyKnownStructure } from "../types.js";
+import { type ThingsAlredyKnownDataStructure } from "../types.js";
 
-const thingsAlredyKnown: ThingsAlredyKnownStructure[] = [
+const thingsAlredyKnown: ThingsAlredyKnownDataStructure[] = [
   {
     id: "1",
     name: "Hacer git reset --hard cuando tenia que hacer --soft",

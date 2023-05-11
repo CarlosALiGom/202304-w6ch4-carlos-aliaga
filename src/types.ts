@@ -1,4 +1,8 @@
 export interface ThingsAlredyKnownStructure {
-  id: string;
   name: string;
+}
+
+export interface ThingsAlredyKnownDataStructure
+  extends ThingsAlredyKnownStructure {
+  id: string;
 }
