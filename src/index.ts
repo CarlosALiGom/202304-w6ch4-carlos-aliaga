@@ -4,8 +4,10 @@ import express from "express";
 import app from "./server/index.js";
 import morgan from "morgan";
 import {
+  deleteThing,
   getThing,
   getThingsAlredyKnown,
+  postThing,
   responseNotFound,
 } from "./server/controllers/thingsAlredyKnown/thingsAlredyKnownControllers.js";
 
@@ -21,6 +23,10 @@ app.listen(port, () => {
 
 app.get("/things", getThingsAlredyKnown);
 
-app.get("/things/:id", getThing);
+app.get("/things/:idThing", getThing);
+
+app.delete("/things/:idThing", deleteThing);
+
+app.post("/things", postThing);
 
 app.use(responseNotFound);
